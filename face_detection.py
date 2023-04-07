@@ -51,7 +51,8 @@ class FaceDetector:
         """
         The embedding of the image passed by parameter are calculated using MTCNN and InceptionResnetV1.
         if no face is recognized, a numpy(1,512) of ones is returned.
-        We choose this vector to represent the unknown embedding.
+        We choose this vector to represent the unknown embedding because it is away from any 
+        embedding that may be returned by faceNet.
         """
         # The face of the image is detected and cropped
         faces, _ = self.mtcnn(image, return_prob=True)
